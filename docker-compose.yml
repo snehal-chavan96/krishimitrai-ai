@@ -1,0 +1,26 @@
+services:
+  krishimitra-app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=qwen2.5:3b
+    volumes:
+      - krishimitra_data:/app/data
+    restart: unless-stopped
+
+  # Optional local Ollama container (no API keys required)
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    profiles:
+      - local-llm
+
+volumes:
+  krishimitra_data:
+  ollama_models:

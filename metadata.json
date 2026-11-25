@@ -1,0 +1,10 @@
+{
+  "name": "KrishiMitra AI",
+  "description": "Voice-First Multilingual Agricultural Assistant for Indian farmers supporting Marathi, Hindi, and English with grounded RAG, live weather, and mandi prices.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
